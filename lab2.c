@@ -207,7 +207,7 @@ int main()
         }
       
       }
-      else if (((packet.keycode[0] != 0x0) || (packet.keycode[1]!= 0x0) || (packet.modifiers != 0x0)) && (rownum < 23)){
+      else if (((packet.keycode[0] != 0x0) || (packet.keycode[1]!= 0x0)) && (rownum < 23)){
         acsii = convert_to_ascii(packet.keycode[0], packet.keycode[1], packet.modifiers, rownum, colnum);
         colnum+=1;
         message_to_send[charIdex] = acsii;
