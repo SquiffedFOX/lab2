@@ -203,10 +203,10 @@ int main()
           charIdex -= 1;
           colnum -= 1;
           part_Idex += 1;
-          int p = part_Idex - 1;
+          int p = part_Idex;
           int n = colnum + 1;
-          while (p >= 0){
-            fbputchar(part_message[p],rownum,n);
+          while (p > 0){
+            fbputchar(part_message[p-1],rownum,n);
             p-=1;
             n+=1;
           }
@@ -275,10 +275,10 @@ int main()
       if(rownum != 23){
         fbputchar('*',23,0);
       }
-      while(part_Idex>0){
-        int p1 = part_Idex-1;
+      int p1 = part_Idex;
+      while(p1>0){
         int tpcl = colnum+1;
-        fbputchar(part_message[p1],rownum,tpcl);
+        fbputchar(part_message[p1-1],rownum,tpcl);
         p1 -=1;
         tpcl+=1;
       }
