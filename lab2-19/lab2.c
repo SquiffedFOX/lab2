@@ -197,7 +197,7 @@ int main()
           charIdex -= 1;
           colnum -= 1;
           part_Idex += 1;
-          fbputchar(part_message[part_Idex - 1],rownum,colnum+1);
+          fbputchar(message_to_send[charIdex],rownum,colnum+1);
         
         //   if(part_Idex > 0){
         //     fbputchar(part_message[part_Idex-1],rownum,colnum+1); 
@@ -273,8 +273,9 @@ int main()
         fbputchar('*',23,0);
       }
       int p1 = part_Idex;
+      int tpcl = colnum+1;
       while(p1>0){
-        int tpcl = colnum+1;
+        
         fbputchar(part_message[p1-1],rownum,tpcl);
         p1 -=1;
         tpcl+=1;
