@@ -193,16 +193,19 @@ int main()
       }
       else if(packet.keycode[0]==0x50){//left arrow    
         if(charIdex > 0){
-          if(part_Idex > 0){
-            fbputchar(part_message[part_Idex-1],rownum,colnum+1); 
-          }
-          else if(part_Idex == 0){
-            fbputchar(' ',rownum,colnum);
-          } 
           part_message[part_Idex] = message_to_send[charIdex-1];
           charIdex -= 1;
           colnum -= 1;
           part_Idex += 1;
+          fbputchar(part_message[part_Idex - 1],rownum,colnum+1);
+        
+        //   if(part_Idex > 0){
+        //     fbputchar(part_message[part_Idex-1],rownum,colnum+1); 
+        //   }
+        //   else if(part_Idex == 0){
+        //     fbputchar(' ',rownum,colnum);
+        //   } 
+          
         
           if(colnum < 0 && rownum == 22){
             colnum =63;
@@ -248,11 +251,11 @@ int main()
           key1save = packet.keycode[0];
         }
         
-        if(part_Idex > 0){
-          part_message[part_Idex-1] = '\0';
-          part_Idex -= 1;
+        // if(part_Idex > 0){
+        //   part_message[part_Idex-1] = '\0';
+        //   part_Idex -= 1;
 
-        }
+        // }
         if(colnum == 64 && rownum == 21){
           colnum = 0;
           rownum = 22;
